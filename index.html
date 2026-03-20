@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors | Internship Project</title>
+</head>
+<body>
+<style>
+body {
+    background: linear-gradient(135deg, #0A1F44,#4DA8DA);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   
+}
+
+
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 380px;
+    text-align: center;
+    box-shadow: 0 15px 30px,#F4F6F8;
+    color: #0A1F44;
+}
+
+
+h1 {
+    margin-bottom: 5px;
+}
+
+
+.subtitle {
+    color:#F4F6F8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    padding: 12px 18px;
+    margin: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background:#0A1F44;
+    color: white;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    background:#4DA8DA;
+}
+
+.reset {
+    padding: 12px 18px;
+    margin: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background:#0A1F44;
+    color: white;
+    transition: 0.3s;
+}
+
+.reset:hover {
+    background:#4DA8DA;
+}
+
+.result {
+    color:#0A1F44;
+}
+   
+
+.scoreboard {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+.scoreboard span {
+    color:#0A1F44;
+}
+    </style>
+
+<div class="container">
+    <h1>✊ ✋ ✌ </h1>
+    <h2> Rock Paper Scisssors</h2>
+
+
+    <form method="post">
+        <div class="buttons">
+            <button name="choice" value="rock">✊ Rock</button>
+            <button name="choice" value="paper">✋ Paper</button>
+            <button name="choice" value="scissors">✌ Scissors</button>
+        </div>
+
+        <button class="reset" name="reset" value="1">🔄✨Reset Score</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <p><b>You chose:</b> {{ user_choice }}</p>
+        <p><b>Computer chose:</b> {{ computer_choice }}</p>
+        <h2>{{ result }}</h2>
+    </div>
+    {% endif %}
+
+    <div class="scoreboard">
+        <div>User Score: <span>{{ user_score }}</span></div>
+        <div>Computer Score: <span>{{ computer_score }}</span></div>
+    </div>
+</div>
+
+</body>
+</html>
